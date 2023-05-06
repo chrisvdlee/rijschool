@@ -1,0 +1,517 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+//Stelt globale kleuren in
+$background-color: #fff;
+$secondary-background-color: #ECECEC;
+$primary-color: #4C89FF;
+$secondary-color: #fff;
+
+// Maakt pop up onzichtbaar
+[x-cloak] { display: none !important; }
+
+//Globale styling
+*{
+    font-family: Roboto;
+    margin: 0px;
+    padding: 0px;
+}
+
+// Globale header styling
+h1{
+    font-size: 50px;
+    color: $primary-color;
+}
+
+h3{
+    font-size: 30px;
+}
+
+html, body{
+    height: 100%;
+}
+
+//Zorgt ervoor dat het hamburger menu knop niet zichtbaar is op desktop
+.hamburger-menu{
+    display: none !important;
+}
+
+//Zorgt ervoor dat alle content buiten de sidebar staat
+.content{
+    padding: 25px 0px 0px 300px;
+}
+
+//Globale button styling
+.button{
+    padding: 10px 20px;
+    background-color: $primary-color;
+    color: $secondary-color;
+    border-radius: 10px;
+    border: 1px solid $secondary-color;
+}
+
+.button:hover{
+    background-color: $secondary-color;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+}
+
+.button_reverse{
+    padding: 10px 20px;
+    background-color: $secondary-color;
+    color: $primary-color;
+    border-radius: 10px;
+    border: 1px solid $primary-color;
+}
+
+.button_reverse:hover{
+    background-color: $primary-color;
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
+}
+
+.button-wrapper{
+    padding-top: 20px;
+}
+
+//Alert styling
+.alert-wrapper
+{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    .text-alert{
+        min-height: 0px !important;
+    }
+
+    .alert
+    {
+        background-color: #fff;
+        padding: 30px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: fit-content;
+        min-height: 600px;
+        height: fit-content;
+
+        .relative-wrapper{
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            h3{
+                color: $primary-color;
+            }
+
+            p{
+                padding-bottom: 20px;
+                color: $primary-color;
+            }
+
+            .close{
+                position: absolute;
+                right: 0;
+            }
+
+            .button{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+
+            .info-wrapper{
+
+                display: flex;
+                justify-content: space-between;
+                width: fit-content;
+                gap: 100px;
+                .info{
+
+                    h4{
+                        font-size: 20px;
+                        color: $primary-color;
+                    }
+
+                    p{
+                        font-size: 15px;
+                        color: $primary-color;
+                        padding-bottom: 10px;
+                    }
+
+                    .comment{
+                        width: 300px;
+                    }
+                }
+
+                .opmerking{
+
+                    h4{
+                        color: $primary-color;
+                    }
+
+                    .input {
+                        border-radius: 10px;
+                        border: #b3b3b3 1px solid;
+                        width: 300px;
+                        margin: 10px 0px;
+                        height: 200px;
+                    }
+
+                    .buttons{
+                        position: absolute;
+
+                        .button{
+                            position: relative;
+                        }
+
+                    }
+                }
+
+                img{
+                    width: 400px;
+                }
+            }
+        }
+    }
+}
+
+// Sidebar styling
+.sidebar{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: $secondary-background-color;
+    position: fixed;
+    height: 100%;
+
+    .menu-top{
+        display: flex;
+        flex-direction: column;
+
+        .img {
+            color: $primary-color;
+            i{
+                padding-right: 5px;
+            }
+        }
+
+        .menu-links{
+            padding-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .active{
+                color: $primary-color;
+            }
+
+            i{
+                padding-right: 5px;
+            }
+        }
+    }
+}
+
+// Dashboard styling
+.dashboard{
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    h1{
+        text-align: center;
+    }
+
+    .dashboard_img{
+        width: 750px;
+    }
+}
+
+// Lesrooster styling
+.lesrooster{
+    padding-left: 350px;
+
+    h1{
+        padding-bottom: 20px;
+    }
+
+    .lessons{
+        display: flex;
+
+        .lesson{
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-radius: 10px;
+            gap: 10px;
+            color: $secondary-color;
+            margin-top: 10px;
+            transition: 200ms;
+
+            .top{
+                width: 500px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .bottom{
+                width: 500px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        .future-wrapper{
+            width: 40%;
+            .future_title{
+                color: $primary-color;
+                padding: 20px 0px 20px 0px;
+            }
+            .future{
+                background-color: #9fbefb;
+
+            }
+        }
+
+        .finished_wrapper{
+            width: 40%;
+            .finished_title{
+                color: #00FF28;
+                padding: 20px 0px 20px 0px;
+            }
+            .finished{
+                background-color: #7afa8f;
+            }
+            padding-left: 100px;
+        }
+
+        .lesson:hover{
+            margin-left: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+    }
+
+    .alert{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999999;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h3{
+            color: $primary-color;
+            padding-bottom: 20px;
+        }
+
+        h4{
+            font-size: 20px;
+            color: $primary-color;
+        }
+
+        .main-alert{
+            background-color: $secondary-color;
+            width: fit-content;
+            height: fit-content;
+            padding: 20px;
+
+            .form_wrapper{
+                display: flex;
+                justify-content: space-between;
+                gap: 50px;
+
+                .input{
+                    border-radius: 10px;
+                    border: #b3b3b3 1px solid;
+                    width: 300px;
+                    margin: 10px 0px;
+                }
+
+                .time{
+                    display: flex;
+                    gap: 50px;
+                    input{
+                        width: 125px;
+                    }
+                }
+
+                img{
+                    width: 400px;
+                }
+            }
+        }
+
+        .relative-wrapper{
+            position: relative;
+            .close{
+                position: absolute;
+                right: 0;
+            }
+
+            .button{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+// Mededelingen styling
+.announcements{
+
+    padding-left: 350px;
+
+    h1{
+        padding-bottom: 40px;
+    }
+
+    .announcement_wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .announcement{
+            display: flex;
+            gap: 20px;
+
+            .left{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                border-right: #7a7a7b 1px solid;
+                width: fit-content;
+                padding: 0px 20px 0px 0px;
+                text-align: center;
+                color: #7a7a7b;
+            }
+
+            .right {
+
+                h3 {
+                    font-size: 25px;
+                }
+
+                p{
+                    font-size: 15px;
+                    color: #7a7a7b;
+                }
+
+            }
+        }
+    }
+}
+
+//Responsive
+@media  (max-width:1500px) {
+    .lessons{
+        flex-direction: column;
+
+        .finished_wrapper{
+         padding-left: 0px !important;
+        }
+    }
+}
+
+@media  (max-width:950px) {
+    .content{
+        padding: 25px 0px 0px 25px;
+    }
+
+    // Laat de hamburger menu knop zien op mobiel
+    .hamburger-menu {
+        display: flex !important;
+        position: fixed;
+        right: 0px;
+        padding: 20px;
+        z-index: 999;
+    }
+
+    .sidebar{
+        display: none !important;
+    }
+
+    .responsive-wrapper{
+        .sidebar{
+            width: 100%;
+            display: flex !important;
+            align-items: center;
+
+            .menu-top{
+                align-items: center;
+
+                .menu-links{
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main-alert, .alert{
+
+        h3{
+            width: fit-content;
+
+            padding-right: 20px;
+
+            font-size: 25px;
+        }
+
+        img{
+            display: none;
+        }
+
+        .button{
+            position: relative!important;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .top{
+        width: 200px !important;
+        gap: 20px;
+    }
+
+    .bottom {
+        width: 200px !important;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .announcements{
+        h1{
+            font-size: 40px;
+        }
+    }
+}
